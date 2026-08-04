@@ -3,7 +3,6 @@ import { Person } from '../types/swapi';
 import { usePlanet, useSpecies } from '../hooks/queries';
 import { formatHeight, formatMass, formatDate, getSpeciesColor } from '../utils/helpers';
 import { X } from 'lucide-react';
-import classNames from 'classnames';
 
 interface CharacterModalProps {
   person: Person | null;

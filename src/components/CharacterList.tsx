@@ -13,7 +13,7 @@ export const CharacterList: React.FC<CharacterListProps> = ({ onSelectCharacter 
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState<FilterState>({ search: '', homeworld: '', film: '', species: '' });
   
-  const hasActiveFilters = filters.search || filters.homeworld || filters.film || filters.species;
+  const hasActiveFilters = Boolean(filters.search || filters.homeworld || filters.film || filters.species);
   
   // Queries
   const { 

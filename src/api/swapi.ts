@@ -1,6 +1,6 @@
 import { PaginatedResponse, Person, Planet, Species, Film } from '../types/swapi';
 
-const BASE_URL = import.meta.env.VITE_SWAPI_BASE_URL || 'https://swapi.py4e.com/api';
+const BASE_URL = (import.meta as any).env.VITE_SWAPI_BASE_URL || 'https://swapi.py4e.com/api';
 
 export const fetchPeople = async (page: number = 1): Promise<PaginatedResponse<Person>> => {
   const response = await fetch(`${BASE_URL}/people/?page=${page}`);
@@ -47,9 +47,9 @@ export const fetchAllPlanets = async (): Promise<Planet[]> => {
   let all: Planet[] = [];
   let nextUrl: string | null = `${BASE_URL}/planets/`;
   while (nextUrl) {
-    const response = await fetch(nextUrl);
+    const response: Response = await fetch(nextUrl);
     if (!response.ok) break;
-    const data = await response.json();
+    const data: PaginatedResponse<Planet> = await response.json();
     all = [...all, ...data.results];
     nextUrl = data.next;
   }
@@ -60,9 +60,9 @@ export const fetchAllSpecies = async (): Promise<Species[]> => {
   let all: Species[] = [];
   let nextUrl: string | null = `${BASE_URL}/species/`;
   while (nextUrl) {
-    const response = await fetch(nextUrl);
+    const response: Response = await fetch(nextUrl);
     if (!response.ok) break;
-    const data = await response.json();
+    const data: PaginatedResponse<Species> = await response.json();
     all = [...all, ...data.results];
     nextUrl = data.next;
   }
@@ -73,9 +73,9 @@ export const fetchAllFilms = async (): Promise<Film[]> => {
   let all: Film[] = [];
   let nextUrl: string | null = `${BASE_URL}/films/`;
   while (nextUrl) {
-    const response = await fetch(nextUrl);
+    const response: Response = await fetch(nextUrl);
     if (!response.ok) break;
-    const data = await response.json();
+    const data: PaginatedResponse<Film> = await response.json();
     all = [...all, ...data.results];
     nextUrl = data.next;
   }
