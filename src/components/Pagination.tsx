@@ -12,10 +12,10 @@ interface PaginationProps {
 }
 
 export const Pagination: React.FC<PaginationProps> = ({ 
-  currentPage, 
+  currentPage,
   totalPages,
-  hasNext, 
-  hasPrevious, 
+  hasNext,
+  hasPrevious,
   onPageChange,
   disabled = false
 }) => {
@@ -23,7 +23,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 my-8">
+    <div className="flex items-center justify-center gap-4 my-8">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={!hasPrevious || disabled}
@@ -36,10 +36,11 @@ export const Pagination: React.FC<PaginationProps> = ({
         <span className="hidden md:inline">Previous</span>
       </button>
       
-      <div className="flex flex-wrap gap-1 md:gap-2">
+      {/* Desktop view: full page numbers */}
+      <div className="hidden md:flex flex-wrap gap-2">
         {pages.map(page => (
           <button
-            key={page}
+            key={`page-${page}`}
             onClick={() => onPageChange(page)}
             disabled={disabled}
             className={classNames(
@@ -53,6 +54,11 @@ export const Pagination: React.FC<PaginationProps> = ({
             {page}
           </button>
         ))}
+      </div>
+
+      {/* Mobile view: Page X of Y */}
+      <div className="md:hidden flex items-center justify-center text-sm font-medium text-slate-500 dark:text-blue-400 font-display">
+        Page {currentPage} of {totalPages}
       </div>
       
       <button

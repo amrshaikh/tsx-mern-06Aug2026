@@ -41,7 +41,7 @@ function App() {
               {isDark ? <Sun size={24} /> : <Moon size={24} />}
             </button>
             <a 
-              href="https://github.com" 
+              href="https://github.com/amrshaikh/tsx-mern-06Aug2026" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-slate-600 dark:text-blue-500 dark:hover:text-blue-300 transition-colors dark:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
@@ -60,7 +60,9 @@ function App() {
       {/* Footer */}
       <footer className="bg-slate-100 dark:bg-black/80 py-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500 dark:text-gray-500">
-          <p>Powered by SWAPI (The Star Wars API). Data is for demonstration purposes.</p>
+          <p>
+            Powered by <a href="https://swapi.py4e.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors underline decoration-slate-300 dark:decoration-gray-700 underline-offset-2">SWAPI (The Star Wars API)</a>. Data is for demonstration purposes.
+          </p>
         </div>
       </footer>
 

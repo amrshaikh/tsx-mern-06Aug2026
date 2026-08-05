@@ -82,11 +82,9 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({ filters, onFilterCha
             onChange={(e) => onFilterChange({ ...filters, species: e.target.value })}
           >
             <option value="">All Species</option>
-            <option value="1">Human</option>
-            {sortedSpecies.map(s => {
-              if (s.name.toLowerCase() === 'human') return null;
-              return <option key={s.url} value={extractIdFromUrl(s.url)}>{s.name}</option>;
-            })}
+            {sortedSpecies.map(s => (
+              <option key={s.url} value={extractIdFromUrl(s.url)}>{s.name}</option>
+            ))}
           </select>
 
           <select
