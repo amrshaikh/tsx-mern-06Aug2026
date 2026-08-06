@@ -56,10 +56,10 @@ Images are primarily fetched from `starwars-visualguide.com`. If a character ima
 ![Active search and filters showing combined results](screenshots/03-search-filter.png)
 
 **4. Mobile View - List**
-![Character list optimized for mobile viewports](screenshots/04-mobile-list.png)
+<img src="screenshots/04-mobile-list.png" alt="Character list optimized for mobile viewports" width="350" />
 
 **5. Mobile View - Modal**
-![Character detail modal optimized for mobile viewports](screenshots/05-mobile-modal.png)
+<img src="screenshots/05-mobile-modal.png" alt="Character detail modal optimized for mobile viewports" width="350" />
 
 **6. Error State**
 ![Error state with a retry button shown when the API is unreachable](screenshots/06-error-state.png)
