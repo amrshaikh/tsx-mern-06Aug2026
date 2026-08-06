@@ -20,7 +20,7 @@ To satisfy the requirements of providing real, API-driven pagination by default,
 - **Caching**: The `useSpecies` and `usePlanet` queries use the specific SWAPI URLs as their query keys. This ensures automatic deduplication (e.g., if 60 humans are loaded, the app only makes one network request for the Human species).
 
 ## Image Fallback
-Images are primarily fetched from `starwars-visualguide.com`. If a character image doesn't exist (returns a 404), the app uses a fallback to `picsum.photos` using the character's unique ID as the seed, ensuring the fallback image remains consistent across re-renders.
+Images are sourced from `picsum.photos`, seeded with each character's unique ID so the same character always shows the same image across reloads. If an image fails to load, a static local fallback is shown instead.
 
 ## Setup Instructions
 
