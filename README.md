@@ -44,5 +44,27 @@ Images are primarily fetched from `starwars-visualguide.com`. If a character ima
    npm run build
    ```
 
+## Screenshots
+
+**1. Main Character List (Paginated)**
+![Paginated view of characters](screenshots/01-list-view.png)
+
+**2. Character Detail Modal**
+![Character modal showing details like height, mass, films, and homeworld](screenshots/02-modal-detail.png)
+
+**3. Search and Filter**
+![Active search and filters showing combined results](screenshots/03-search-filter.png)
+
+**4. Mobile View - List**
+![Character list optimized for mobile viewports](screenshots/04-mobile-list.png)
+
+**5. Mobile View - Modal**
+![Character detail modal optimized for mobile viewports](screenshots/05-mobile-modal.png)
+
+**6. Error State**
+![Error state with a retry button shown when the API is unreachable](screenshots/06-error-state.png)
+
+> **Note on API Source**: The app defaults to using `swapi.py4e.com` as its primary API base because the original `swapi.dev` has been increasingly unreliable and slow. This mirror maintains the exact same schema. The URL is fully configurable via the `VITE_SWAPI_BASE_URL` environment variable.
+
 ## Deployment
 The app includes a `netlify.toml` file configured for seamless deployment to Netlify (specifically ensuring client-side routing works correctly via redirects). Connect this repository to your Netlify dashboard for automated deployments.
